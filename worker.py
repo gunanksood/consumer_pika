@@ -7,10 +7,8 @@ connection = pika.BlockingConnection(pika.ConnectionParameters(host='172.17.0.1'
 channel = connection.channel()
 
 channel.queue_declare(queue='tasks_queue')
-print(' [*] Waiting for messages. To exit press CTRL+C')
-# myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-# mydb = myclient["mydatabase"]
-# mycol = mydb["customers"]
+print(' Waiting for messages. To exit press CTRL+C')
+
 
 
 def callback(ch, method, properties, body):
